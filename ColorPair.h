@@ -8,6 +8,9 @@ namespace TelCoColorCoder {
     enum MajorColor { WHITE, RED, BLACK, YELLOW, VIOLET };
     enum MinorColor { BLUE, ORANGE, GREEN, BROWN, SLATE };
 
+    extern const int numberOfMajorColors;  // Declare as extern
+    extern const int numberOfMinorColors;  // Declare as extern
+
     class ColorPair {
         private:
             MajorColor majorColor;
@@ -15,7 +18,6 @@ namespace TelCoColorCoder {
         public:
             ColorPair(MajorColor major, MinorColor minor) : majorColor(major), minorColor(minor) {}
 
-            // Inline function definitions
             inline MajorColor getMajor() const { return majorColor; }
             inline MinorColor getMinor() const { return minorColor; }
 
