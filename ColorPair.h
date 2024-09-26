@@ -9,15 +9,12 @@ namespace TelCoColorCoder {
     enum MajorColor { WHITE, RED, BLACK, YELLOW, VIOLET };
     enum MinorColor { BLUE, ORANGE, GREEN, BROWN, SLATE };
 
-    const char* MajorColorNames[] = {
-        "White", "Red", "Black", "Yellow", "Violet"
-    };
-    const char* MinorColorNames[] = {
-        "Blue", "Orange", "Green", "Brown", "Slate"
-    };
+    // Use extern to declare global variables (not definitions)
+    extern const char* MajorColorNames[];
+    extern const char* MinorColorNames[];
 
-    const int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
-    const int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
+    extern const int numberOfMajorColors;
+    extern const int numberOfMinorColors;
 
     class ColorPair {
     private:
