@@ -9,7 +9,6 @@ namespace TelCoColorCoder {
     enum MajorColor { WHITE, RED, BLACK, YELLOW, VIOLET };
     enum MinorColor { BLUE, ORANGE, GREEN, BROWN, SLATE };
 
-    // Use extern to declare global variables (not definitions)
     extern const char* MajorColorNames[];
     extern const char* MinorColorNames[];
 
@@ -23,21 +22,14 @@ namespace TelCoColorCoder {
     public:
         ColorPair(MajorColor major, MinorColor minor) : majorColor(major), minorColor(minor) {}
 
-        MajorColor getMajor() {
-            return majorColor;
-        }
-
-        MinorColor getMinor() {
-            return minorColor;
-        }
-
-        std::string ToString() {
-            std::string colorPairStr = MajorColorNames[majorColor];
-            colorPairStr += " ";
-            colorPairStr += MinorColorNames[minorColor];
-            return colorPairStr;
-        }
+        MajorColor getMajor() const;
+        MinorColor getMinor() const;
+        std::string ToString() const;
     };
+
+    // Function to print the reference manual for wiring personnel
+    void PrintColorCodingManual();
+
 }
 
 #endif // COLOR_PAIR_H
