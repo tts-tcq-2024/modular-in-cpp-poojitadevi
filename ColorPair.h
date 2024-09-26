@@ -15,7 +15,7 @@ namespace TelCoColorCoder {
         public:
             ColorPair(MajorColor major, MinorColor minor) : majorColor(major), minorColor(minor) {}
 
-            // Inline function definitions moved to the header file
+            // Inline function definitions
             inline MajorColor getMajor() const { return majorColor; }
             inline MinorColor getMinor() const { return minorColor; }
 
@@ -23,6 +23,8 @@ namespace TelCoColorCoder {
     };
 
     void PrintColorCodingManual();
+    ColorPair GetColorFromPairNumber(int pairNumber);
+    int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 }
 
 #endif
