@@ -9,15 +9,10 @@ namespace TelCoColorCoder {
     const int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
     const int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
-    // Inline getMajor() and getMinor() methods
-    inline MajorColor ColorPair::getMajor() const { return majorColor; }
-    inline MinorColor ColorPair::getMinor() const { return minorColor; }
-
     std::string ColorPair::ToString() const {
         return std::string(MajorColorNames[majorColor]) + " " + MinorColorNames[minorColor];
     }
 
-    // Refactored PrintColorCodingManual with reduced LOC
     void PrintColorCodingManual() {
         std::cout << "Color Code Manual\n=================" << std::endl;
         for (int majorIndex = 0; majorIndex < numberOfMajorColors; ++majorIndex) {
