@@ -1,6 +1,7 @@
 // GetColorFromPairNumber.cpp
 #include "ColorPair.h"
 #include <iostream>
+#include <cassert>
 
 namespace TelCoColorCoder {
 
