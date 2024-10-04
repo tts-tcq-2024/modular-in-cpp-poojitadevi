@@ -24,7 +24,7 @@ namespace TelCoColorCoder {
             std::string ToString() const;
     };
 
-    void PrintColorCodingManual();
+    std::vector<std::string>  GetColorCodingManual();
     ColorPair GetColorFromPairNumber(int pairNumber);
     int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 }
