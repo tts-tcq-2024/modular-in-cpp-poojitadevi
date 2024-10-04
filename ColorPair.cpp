@@ -1,6 +1,8 @@
 #include "ColorPair.h"
 #include <iostream>
 #include <stdexcept>
+#include <vector>
+#include <string>
 
 namespace TelCoColorCoder {
 
