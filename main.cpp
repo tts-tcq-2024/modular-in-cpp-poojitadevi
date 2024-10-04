@@ -29,8 +29,12 @@ int main() {
     testPairToNumber(TelCoColorCoder::BLACK, TelCoColorCoder::ORANGE, 12);
     testPairToNumber(TelCoColorCoder::VIOLET, TelCoColorCoder::SLATE, 25);
 
+    // Get the color coding manual
+    std::vector<std::string> manual = TelCoColorCoder::GetColorCodingManual();
     // Print the color coding manual
-    TelCoColorCoder::PrintColorCodingManual();
+    for (const std::string& entry : manual) {
+       std::cout << entry << std::endl;
+    }
 
     return 0;
 }
