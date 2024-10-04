@@ -15,17 +15,31 @@ namespace TelCoColorCoder {
         return std::string(MajorColorNames[majorColor]) + " " + MinorColorNames[minorColor];
     }
 
-    void PrintColorCodingManual() {
-        std::cout << "Color Code Manual\n=================" << std::endl;
-        for (int majorIndex = 0; majorIndex < numberOfMajorColors; ++majorIndex) {
-            for (int minorIndex = 0; minorIndex < numberOfMinorColors; ++minorIndex) {
-                int pairNumber = majorIndex * numberOfMinorColors + minorIndex + 1;
-                if (pairNumber > 999) throw std::runtime_error("Error: CCN exceeds 3-digit limit.");
-                std::cout << "Pair Number: " << pairNumber << " -> " 
-                          << ColorPair((MajorColor)majorIndex, (MinorColor)minorIndex).ToString() 
-                          << std::endl;
+    #include <vector>
+#include <string>
+#include <stdexcept>
+
+std::vector<std::string> GetColorCodingManual() {
+    std::vector<std::string> manual;
+    manual.push_back("Color Code Manual\n================="); // First line of the manual
+    
+    for (int majorIndex = 0; majorIndex < numberOfMajorColors; ++majorIndex) {
+        for (int minorIndex = 0; minorIndex < numberOfMinorColors; ++minorIndex) {
+            int pairNumber = majorIndex * numberOfMinorColors + minorIndex + 1;
+            if (pairNumber > 999) {
+                throw std::runtime_error("Error: CCN exceeds 3-digit limit.");
             }
+            
+            // Format the manual entry string
+            std::string entry = "Pair Number: " + std::to_string(pairNumber) + " -> " + 
+                                ColorPair((MajorColor)majorIndex, (MinorColor)minorIndex).ToString();
+            
+            // Add the formatted entry to the vector
+            manual.push_back(entry);
         }
     }
+    
+    return manual; // Return the vector of manual entries
+}
 
 }
